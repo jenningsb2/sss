@@ -1,12 +1,22 @@
 const fs = require('fs-extra');
 const path = require('path');
-const marked = require('marked').marked;
+const { marked } = require('marked');
 const chokidar = require('chokidar');
+const footnote = require('marked-footnote');
+const definitionList = require('./marked-definition-list');
 
 const pagesDir = path.join(__dirname, 'pages');
 const outputDir = path.join(__dirname, 'dist');
 const assetsDir = path.join(__dirname, 'assets');
 const stylesFile = path.join(__dirname, 'styles.css');
+
+// Configure marked with extensions
+marked.use({ extensions: [definitionList] });
+marked.use(footnote());
+marked.use({
+  gfm: true,
+  breaks: true
+});
 
 // Ensure output directory exists
 fs.ensureDirSync(outputDir);
@@ -17,7 +27,11 @@ function copyAssets() {
 }
 
 function processMarkdownFile(filePath) {
-  const content = fs.readFileSync(filePath, 'utf-8');
+  let content = fs.readFileSync(filePath, 'utf-8');
+
+  // Replace {{YEAR}} with current year
+  content = content.replace(/{{YEAR}}/g, new Date().getFullYear());
+
   const htmlContent = marked(content);
 
   const relativePath = path.relative(pagesDir, filePath);

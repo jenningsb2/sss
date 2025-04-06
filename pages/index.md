@@ -1,33 +1,38 @@
 # Nan Yu
-I'm a technology leader and builder. I'm currently Head of Product at [Linear](www.linear.app).
+I'm a technology leader and builder.
 
 ---
 
-## Some things about me
-- Born in [Suzhou](https://en.wikipedia.org/wiki/Suzhou), grew up in San Diego
-- Studied EECS at UC Berkeley. Go Bears
-- Currently lives in Brooklyn
-- Previously CTO at [Everlane](www.everlane.com), VPP at [Mode](www.mode.com)
+- Currently Head of Product at [Linear](https://linear.app)
+- Previously CTO at [Everlane](https://www.everlane.com/), VPP at [Mode](https://mode.com/)
+- Lives in Brooklyn
 
-## Products I love
+## Talks and Interviews
 
-I love products and technology. Every product was cutting edge technology at some point, and there's a lot to learn from their evolution.
+[Interview on Lenny's Podcast](https://www.youtube.com/watch?v=nTr21kgCFF4)
+: *Jan 2025* — "Linear's secrets to building beloved B2B products" we get tactical
 
-- [Lamy Safari](https://www.jetpens.com/LAMY-Safari-Fountain-Pens/ct/1185) fountain pen
-- [Casio G-shock](https://www.casio.com/us/watches/gshock/product.GW-M5610-1/) watch
-- [Visual Studio Code](https://code.visualstudio.com/) editor
-- [Salomon XT-6](https://www.salomon.com/en-us/shop/product/xt-6-adv.html#color=45199) trail running shoes
-- [CleanShot](https://cleanshot.com/) screen capture tool
+[The Heirloom Tomato Org Chart](https://www.youtube.com/watch?v=I4vvBidQcck)
+: *Jun 2024* — a talk given at Figma Config about anti-patterns in startup org chart design
 
-## Writing, Talks, Projects
+## Writing
 
-- [The Heirloom Tomato Org Chart](https://www.youtube.com/watch?v=I4vvBidQcck) — a talk I gave at Figma's Config conference about anti-patterns in startup org chart design
-- [Simple Static Site (sss)](https://github.com/thenanyu/sss) — an extremely simple static site generator that I created to build and maintain this web site. The absolutely simplest way to create a website from a set of markdown files
+There's never been a better time to be a coder
+: *Apr 2025* — Vibe coding, low code, medium code — it's all good, and it's all a lot of fun
+
+AI is an UX problem
+: *Coming soon* — We have plenty of intelligence. The problem is making it usable
 
 ---
 
 ## Contact
+
+Send me a note if you want to get in touch, or have advising or investment ideas.
+
+- thenanyu at gmail
 - [X/Twitter](https://x.com/thenanyu)
 - [LinkedIn](https://www.linkedin.com/in/thenanyu/)
+- [Github](https://github.com/thenanyu)[^1]
 
-Website built with [sss](https://github.com/thenanyu/sss), a simple static site generator created by me, with the help of [Cursor](www.cursor.com) and [Claude](https://claude.ai/)
+
+[^1]: Built with [sss](https://github.com/thenanyu/sss), a simple static site generator (vibe)coded by me for the purpose of maintaining this website. © {{YEAR}} Nan Yu.

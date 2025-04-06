@@ -1,43 +1,200 @@
 /* Light mode (default) */
 :root {
   --background-color: #ffffff;
-  --text-color: #333333;
-  --link-color: #0066cc;
-  --link-hover-color: #004499;
+  --text-color: #2d3748;
+  --text-color-light: #4a5568;
+  --link-color: #3182ce;
+  --link-hover-color: #2c5282;
+  --border-color: #e2e8f0;
+  --heading-color: #1a202c;
 }
 
 /* Dark mode */
 @media (prefers-color-scheme: dark) {
   :root {
-    --background-color: #1a1a1a;
-    --text-color: #e0e0e0;
-    --link-color: #4da6ff;
-    --link-hover-color: #80bfff;
+    --background-color: #1a202c;
+    --text-color: #e2e8f0;
+    --text-color-light: #a0aec0;
+    --link-color: #63b3ed;
+    --link-hover-color: #90cdf4;
+    --border-color: #2d3748;
+    --heading-color: #f7fafc;
   }
 }
 
-body {
+/* Base styles */
+* {
   box-sizing: border-box;
-  background-color: var(--background-color);
-  color: var(--text-color);
-  font-family: sans-serif;
-  line-height: 1.2;
-  margin: 4em auto;
-  width: 100%;
-  max-width: 800px;
-  padding: 0 1.2em;
-
-
+  margin: 0;
+  padding: 0;
 }
 
+html {
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  background-color: var(--background-color);
+  color: var(--text-color);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  line-height: 1.5;
+  margin: 0 auto;
+  max-width: 42rem;
+  padding: 1.5rem 1.25rem;
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+  color: var(--heading-color);
+  font-weight: 700;
+  line-height: 1.25;
+  margin: 1.25rem 0 0.75rem;
+}
+
+h1 {
+  font-size: 2rem;
+  margin-top: 0;
+}
+
+h2 {
+  font-size: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+p {
+  margin-bottom: 0.75rem;
+}
+
+/* Links */
 a {
   color: var(--link-color);
   text-decoration: none;
+  transition: color 0.15s ease;
 }
 
 a:hover {
   color: var(--link-hover-color);
-  text-decoration: underline;
 }
 
-/* Add more styles as needed */
+/* Lists */
+ul, ol {
+  margin: 0.5rem 0;
+  padding-left: 1.5rem;
+}
+
+li {
+  margin: 0.25rem 0;
+}
+
+/* Horizontal rule */
+hr {
+  border: 0;
+  border-top: 1px solid var(--border-color);
+  margin: 1.25rem 0;
+}
+
+/* Code and pre */
+code {
+  background-color: var(--border-color);
+  border-radius: 0.25rem;
+  font-family: Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+  font-size: 0.875rem;
+  padding: 0.2em 0.4em;
+}
+
+pre {
+  background-color: var(--border-color);
+  border-radius: 0.375rem;
+  margin: 0.75rem 0;
+  overflow-x: auto;
+  padding: 0.75rem;
+}
+
+pre code {
+  background-color: transparent;
+  padding: 0;
+}
+
+/* Italics and bold */
+em {
+  color: var(--text-color-light);
+}
+
+strong {
+  color: var(--heading-color);
+}
+
+/* Media queries for responsive design */
+@media (max-width: 640px) {
+  html {
+    font-size: 14px;
+  }
+
+  body {
+    padding: 1rem;
+  }
+
+  h1 {
+    font-size: 1.75rem;
+  }
+}
+
+/* Footnotes */
+.footnotes {
+  margin-top: 2rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--border-color);
+  font-size: 0.875rem;
+}
+
+.footnote-ref,
+.footnote-backref {
+  display: none;
+}
+
+.footnotes ol {
+  list-style: none;
+  padding-left: 0;
+}
+
+.footnotes li {
+  margin-bottom: 0.5em;
+}
+
+.footnotes p {
+  display: inline;
+  margin: 0;
+}
+
+/* Hide footnotes heading */
+#footnote-label {
+  display: none;
+}
+
+/* Hide all numeric references (both forward and back) */
+a[data-footnote-ref],
+a[data-footnote-backref] {
+  display: none;
+}
+
+/* Remove list numbers and padding */
+.footnotes ol {
+  list-style: none;
+  padding-left: 0;
+}
+
+/* Definition lists */
+dl {
+  margin: 1rem 0;
+}
+
+dt {
+  margin-top: 0.5rem;
+}
+
+dd {
+  margin-left: 0;
+  color: var(--text-color-light);
+}

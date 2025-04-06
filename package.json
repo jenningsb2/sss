@@ -12,6 +12,7 @@
   "dependencies": {
     "chokidar": "^3.6.0",
     "fs-extra": "^11.2.0",
-    "marked": "^14.0.0"
+    "marked": "^14.0.0",
+    "marked-footnote": "^1.2.4"
   }
 }

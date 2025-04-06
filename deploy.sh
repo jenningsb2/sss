@@ -13,6 +13,8 @@ cd dist
 # Clean up: remove the temporary Git repository
 rm -rf .git
 
+# add the CNAME file
+echo "thenanyu.com" > CNAME
 
 # Initialize a new Git repository
 git init
