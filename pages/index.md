@@ -1,5 +1,5 @@
 # Nan Yu
-👋🏼 I'm a technology leader and builder.
+I'm a technology leader and builder
 
 ---
 
