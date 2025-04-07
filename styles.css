@@ -39,7 +39,7 @@ body {
   background-color: var(--background-color);
   color: var(--text-color);
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-  line-height: 1.5;
+  line-height: 1.7;
   margin: 0 auto;
   max-width: 42rem;
   padding: 1.5rem 1.25rem;
@@ -64,7 +64,7 @@ h2 {
 }
 
 p {
-  margin-bottom: 0.75rem;
+  margin-bottom: 1.25rem;
 }
 
 /* Links */
@@ -197,4 +197,41 @@ dt {
 dd {
   margin-left: 0;
   color: var(--text-color-light);
+}
+
+/* Pull Quotes */
+blockquote {
+  margin: 2rem 0rem;
+  padding: 0.5rem 1.25rem;
+  font-size: 1.25rem;
+  line-height: 1.4;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  border-left: 2px solid color-mix(in srgb, var(--text-color) 15%, transparent);  /* faint border */
+}
+
+blockquote p {
+  margin-bottom: 0;
+  color: var(--heading-color);
+  font-style: italic;
+}
+
+blockquote p:last-child {
+  margin-bottom: 0;
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 640px) {
+  blockquote {
+    margin: 2rem 0;
+    padding: 0.5rem 1rem;
+    font-size: 1.125rem;
+  }
+}
+
+/* Dark mode adjustments for blockquotes */
+@media (prefers-color-scheme: dark) {
+  blockquote p {
+    color: color-mix(in srgb, var(--text-color) 50%, var(--link-color) 25%);
+  }
 }

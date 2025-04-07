@@ -43,7 +43,7 @@ function processMarkdownFile(filePath) {
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="${path.relative(path.dirname(outputPath), path.join(outputDir, 'styles.css'))}?t=${Date.now()}">
+        <link rel="stylesheet" href="${path.relative(path.dirname(outputPath), path.join(outputDir, 'styles.css'))}">
         <title>${path.basename(filePath, '.md')}</title>
     </head>
     <body>
@@ -74,6 +74,10 @@ function processAllMarkdownFiles() {
 
 function compile() {
   console.log('Compiling...');
+
+  // Clean the distribution directory first
+  fs.emptyDirSync(outputDir);
+
   copyAssets();
   processAllMarkdownFiles();
   console.log('Compilation complete.');

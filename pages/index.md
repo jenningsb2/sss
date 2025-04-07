@@ -1,11 +1,11 @@
 # Nan Yu
-I'm a technology leader and builder.
+👋🏼 I'm a technology leader and builder.
 
 ---
 
-- Currently Head of Product at [Linear](https://linear.app)
-- Previously CTO at [Everlane](https://www.everlane.com/), VPP at [Mode](https://mode.com/)
-- Lives in Brooklyn
+Head of Product at [Linear](https://linear.app)
+Previously CTO at [Everlane](https://www.everlane.com/), VPP at [Mode](https://mode.com/)
+Lives in Brooklyn, NY
 
 ## Talks and Interviews
 
@@ -17,8 +17,8 @@ I'm a technology leader and builder.
 
 ## Writing
 
-There's never been a better time to be a coder
-: *Apr 2025* — Vibe coding, low code, medium code — it's all good, and it's all a lot of fun
+[There has never been a better time to be a coder](coder.html)
+: *Apr 2025* — Vibe coding, low code, medium code... it's all good, and it's all a lot of fun
 
 AI is an UX problem
 : *Coming soon* — We have plenty of intelligence. The problem is making it usable
@@ -35,4 +35,4 @@ Send me a note if you want to get in touch, or have advising or investment ideas
 - [Github](https://github.com/thenanyu)[^1]
 
 
-[^1]: Built with [sss](https://github.com/thenanyu/sss), a simple static site generator (vibe)coded by me for the purpose of maintaining this website. © {{YEAR}} Nan Yu.
+[^1]: Built with [sss](https://github.com/thenanyu/sss), a simple static site generator (vibe)coded by me for the purpose of maintaining this website.
