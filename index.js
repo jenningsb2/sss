@@ -34,8 +34,10 @@ function processMarkdownFile(filePath) {
 
   const htmlContent = marked(content);
 
-  const relativePath = path.relative(pagesDir, filePath);
-  const outputPath = path.join(outputDir, relativePath.replace('.md', '.html'));
+  // Get the basename and strip out the date if it exists
+  const basename = path.basename(filePath);
+  const cleanName = basename.replace(/^\d{4}-\d{2}-\d{2}-(.+)\.md$/, '$1.md');
+  const outputPath = path.join(outputDir, cleanName.replace('.md', '.html'));
 
   const htmlTemplate = `
     <!DOCTYPE html>
@@ -43,8 +45,8 @@ function processMarkdownFile(filePath) {
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="${path.relative(path.dirname(outputPath), path.join(outputDir, 'styles.css'))}">
-        <title>${path.basename(filePath, '.md')}</title>
+        <link rel="stylesheet" href="styles.css">
+        <title>${path.basename(cleanName, '.md')}</title>
     </head>
     <body>
         ${htmlContent}
@@ -52,7 +54,6 @@ function processMarkdownFile(filePath) {
     </html>
   `;
 
-  fs.ensureDirSync(path.dirname(outputPath));
   fs.writeFileSync(outputPath, htmlTemplate);
   console.log(`Generated ${outputPath}`);
 }
