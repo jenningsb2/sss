@@ -32,7 +32,8 @@ Send me a note if you want to get in touch, or have advising or investment ideas
 - thenanyu at gmail
 - [X/Twitter](https://x.com/thenanyu)
 - [LinkedIn](https://www.linkedin.com/in/thenanyu/)
-- [Github](https://github.com/thenanyu)[^1]
+- [Github](https://github.com/thenanyu)
 
-
-[^1]: Built with [sss](https://github.com/thenanyu/sss), a simple static site generator (vibe)coded by me for the purpose of maintaining this website.
+<div class="footnotes" markdown='1'>
+  Built with <a href="https://github.com/thenanyu/sss">sss</a>, a simple static site generator (vibe)coded by me for the purpose of maintaining this&nbsp;website.
+</div>

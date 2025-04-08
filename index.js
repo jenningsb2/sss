@@ -42,14 +42,18 @@ function processMarkdownFile(filePath) {
   }
 
   // Replace {{YEAR}} with current year
-  content = content.replace(/{{YEAR}}/g, new Date().getFullYear());
+  const currentYear = new Date().getFullYear();
+  content = content.replace(/{{YEAR}}/g, currentYear);
 
+  // Clean filename for output
   const cleanName = basename.replace(/^\d{4}-\d{2}-\d{2}-(.+)\.md$/, '$1.md');
   const isIndex = cleanName.toLowerCase() === 'index.md';
 
   // Add home link for non-index files
   if (!isIndex) {
     content = '[← Home](index.html)\n\n' + content;
+    // Add copyright footer using footnotes styling
+    content += `\n\n<div class="footnotes">\n<p>© Nan Yu ${currentYear}</p>\n</div>`;
   }
 
   const htmlContent = marked(content);
