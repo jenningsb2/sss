@@ -3,6 +3,8 @@
 # There has never been a better time to be a&nbsp;coder
 > Vibe-coding, low-code, medium-code... it's all good, and it's all a lot of&nbsp;fun
 
+*Apr 2025*
+
 I picked up a coding project today that I hadn't touched in about a year, and I was completely blown away. Quickly, using modern tools, I could rebuild my personal context to get back to productivity in minutes.
 
 You see, in the old days, I would have dreaded this exercise — I would have had to remember dozens of little decisions I made, so many miscellaneous details that don't really matter to the final product, but stand in the way between you and what's interesting.
