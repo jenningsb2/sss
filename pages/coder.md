@@ -11,10 +11,10 @@ You see, in the old days, I would have dreaded this exercise — I would have ha
 
 But today I just asked my coding agent, "Hey, how do I build and deploy this thing?" It took about 10 seconds to figure it out and let me know.
 
-I immediately got started with a small feature. I told the agent the basic idea and it came back with a reasonable implementation. I zhuzhed it up by hand afterwards, but all the initial choices were fairly reasonable.
+I immediately got started with a small feature. I told the agent the basic idea and it came back with an implementation. I zhuzhed it up by hand afterwards, but all the initial choices were fairly reasonable.
 
-That's the trick, really. Most choices you make in a codebase are just fairly reasonable. The bits that I want to have fun with, I can still do. The coding agent lives inside an IDE, so I can put my hands back on the the controls whenever I decide. Some people call what I'm doing "vibe coding," but I don't think that's it... There's too much precision for it to be based purely on "vibes"; it's closer to various degrees of self-driving car.
+That's the trick, really. Most choices you make in a codebase are just fairly reasonable. The bits that I want to have fun with, I can still do. The coding agent lives inside an IDE, so I can put my hands back on the the controls whenever I decide. Some people call what I'm doing "vibe coding," but I don't think that's it... There's too much precision for it to be based couched as "vibes"; it's closer to various degrees of self-driving car.
 
-When I'm dictating commands and letting agent mode run, it's very similar to being in the back of a Waymo. I can see the map, the lidar scans, and the steering wheel making adjustments. When I'm in chat mode and validating every move it feels like enhanced cruise control. I'm setting the target speed and telling it to switch lanes, but it's handling all of the execution.
+When I'm dictating commands and letting agent mode run, it's very similar to being in the back of a Waymo. I can see the map, the lidar scans, and the steering wheel making adjustments. When I'm in chat mode and validating every move, it feels like enhanced cruise control. I'm setting the target speed and telling it to switch lanes, but it's handling all of the execution.
 
-During the trickiest moments, or even the moments that are most ***fun***, I'm fully hands-on and in control of the details. There's just never been as enjoyable, or as productive a time to be a coder as today.
+During the trickiest moments, or even the moments that are most ***fun***, I'm fully hands-on and in control of the details, with a bit of auto-complete assistance if I want it. It's all quite natural and smooth. There's just never been as enjoyable, or as productive a time to be a coder as today.
