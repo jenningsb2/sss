@@ -2,7 +2,7 @@
 
 # Configuration
 TARGET_REPO="git@github.com:thenanyu/thenanyu.github.io.git"
-BRANCH="master"
+BRANCH="main"
 
 # Ensure the script exits on any error
 set -e
