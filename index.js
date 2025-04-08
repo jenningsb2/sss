@@ -29,14 +29,30 @@ function copyAssets() {
 function processMarkdownFile(filePath) {
   let content = fs.readFileSync(filePath, 'utf-8');
 
+  // Get the basename and parse date if it exists
+  const basename = path.basename(filePath);
+  const dateMatch = basename.match(/^(\d{4})-(\d{2})-\d{2}-/);
+
+  if (dateMatch) {
+    const [year, monthNum] = dateMatch.slice(1);
+    const date = new Date(year, parseInt(monthNum) - 1);
+    const monthName = date.toLocaleString('en-US', { month: 'short' });
+    const formattedDate = `*${monthName} ${year}*`;
+    content = content.replace(/{{date}}/g, formattedDate);
+  }
+
   // Replace {{YEAR}} with current year
   content = content.replace(/{{YEAR}}/g, new Date().getFullYear());
 
-  const htmlContent = marked(content);
-
-  // Get the basename and strip out the date if it exists
-  const basename = path.basename(filePath);
   const cleanName = basename.replace(/^\d{4}-\d{2}-\d{2}-(.+)\.md$/, '$1.md');
+  const isIndex = cleanName.toLowerCase() === 'index.md';
+
+  // Add home link for non-index files
+  if (!isIndex) {
+    content = '[← Home](index.html)\n\n' + content;
+  }
+
+  const htmlContent = marked(content);
   const outputPath = path.join(outputDir, cleanName.replace('.md', '.html'));
 
   const htmlTemplate = `
