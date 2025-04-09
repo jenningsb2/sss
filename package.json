@@ -4,7 +4,8 @@
   "description": "A simple static site generator",
   "main": "index.js",
   "scripts": {
-    "build": "node index.js"
+    "build": "node index.js",
+    "new": "node create-entry.js"
   },
   "keywords": [],
   "author": "Nan Yu",

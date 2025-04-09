@@ -10,24 +10,19 @@ Lives in Brooklyn, NY
 ## Talks and Interviews
 
 [Interview on Lenny's Podcast](https://www.youtube.com/watch?v=nTr21kgCFF4)
-: *Jan 2025* — "Linear's secrets to building beloved B2B products" we get tactical
-
+: *Jan 2025* — "Linear's secrets to building beloved B2B products" we get into specific tactics that help us ship quickly with quality
 [The Heirloom Tomato Org Chart](https://www.youtube.com/watch?v=I4vvBidQcck)
-: *Jun 2024* — a talk given at Figma Config about anti-patterns in startup org chart design
+: *Jun 2024* — a talk I gave Figma Config about common anti-patterns in startup org chart design and how these decisions affect your product
 
 ## Writing
 
-[There has never been a better time to be a coder](coder.html)
-: *Apr 2025* — Vibe coding, low code, medium code... it's all good, and it's all a lot of fun
-
-AI is an UX problem
-: *Coming soon* — We have plenty of intelligence. The problem is making it usable
+{{writing}}
 
 ---
 
 ## Contact
 
-Send me a note if you want to get in touch, or have advising or investment ideas.
+Send me a note if you want to get in touch, or have advising or investment ideas
 
 - thenanyu at gmail
 - [X/Twitter](https://x.com/thenanyu)
