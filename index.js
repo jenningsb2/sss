@@ -170,8 +170,8 @@ function generateWritingEntries() {
       if (!a.dateObj) return 1;
       if (!b.dateObj) return -1;
 
-      // Compare dates directly
-      return b.dateObj - a.dateObj;
+      // Compare dates directly (newest first)
+      return b.dateObj.getTime() - a.dateObj.getTime();
     });
 
   // Generate the writing entries
