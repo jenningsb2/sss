@@ -137,13 +137,13 @@ function generateWritingEntries() {
       const title = titleMatch ? titleMatch[1].trim() : path.basename(file, '.md');
 
       // Extract date from filename
-      const dateMatch = file.match(/^(\d{4})-(\d{2})-\d{2}-/);
+      const dateMatch = file.match(/^(\d{4})-(\d{2})-(\d{2})-/);
       let date = '*Coming soon*';
       let dateObj = null;
 
       if (dateMatch) {
-        const [year, monthNum] = dateMatch.slice(1);
-        dateObj = new Date(year, parseInt(monthNum) - 1);
+        const [year, monthNum, dayNum] = dateMatch.slice(1);
+        dateObj = new Date(year, parseInt(monthNum) - 1, parseInt(dayNum));
         const monthName = dateObj.toLocaleString('en-US', { month: 'short' });
         date = `*${monthName} ${year}*`;
       }
@@ -171,7 +171,9 @@ function generateWritingEntries() {
       if (!b.dateObj) return -1;
 
       // Compare dates directly (newest first)
-      return b.dateObj.getTime() - a.dateObj.getTime();
+      const result = b.dateObj.getTime() - a.dateObj.getTime();
+      console.log(`Comparing ${a.title} (${a.dateObj.toISOString()}) with ${b.title} (${b.dateObj.toISOString()}) = ${result}`);
+      return result;
     });
 
   // Generate the writing entries
