@@ -59,6 +59,10 @@ function processMarkdownFile(filePath) {
   const firstBlockMatch = contentAfterTitle.match(/^(?:>|\n\n)(.+?)(?:\n\n|$)/s);
   const description = firstBlockMatch ? firstBlockMatch[1].trim().replace(/^>\s*/, '') : '';
 
+  // Extract first image from content
+  const imageMatch = content.match(/!\[.*?\]\((.*?)\)/);
+  const imageUrl = imageMatch ? `https://thenanyu.com/${imageMatch[1]}` : '';
+
   // If this is the index file, replace the writing template variable
   if (isIndex) {
     const writingEntries = generateWritingEntries();
@@ -87,11 +91,13 @@ function processMarkdownFile(filePath) {
         <meta property="og:title" content="${title}">
         <meta property="og:description" content="${description}">
         <meta property="og:url" content="https://thenanyu.com/${cleanName.replace('.md', '.html')}">
+        ${imageUrl ? `<meta property="og:image" content="${imageUrl}">` : ''}
 
         <!-- Twitter -->
         <meta name="twitter:card" content="summary_large_image">
         <meta name="twitter:title" content="${title}">
         <meta name="twitter:description" content="${description}">
+        ${imageUrl ? `<meta name="twitter:image" content="${imageUrl}">` : ''}
 
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
