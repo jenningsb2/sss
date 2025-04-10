@@ -56,8 +56,9 @@ function processMarkdownFile(filePath) {
 
   // Find first block-level element after the title
   const contentAfterTitle = content.slice(content.indexOf(title) + title.length);
-  const firstBlockMatch = contentAfterTitle.match(/^(?:>|\n\n)(.+?)(?:\n\n|$)/s);
-  const description = firstBlockMatch ? firstBlockMatch[1].trim().replace(/^>\s*/, '') : '';
+  const firstBlockMatch = contentAfterTitle.match(/^>[ \t]*([^\n]+)/m);
+  const description = firstBlockMatch ? firstBlockMatch[1].trim() : '';
+  console.log(`Extracted description for ${cleanName}: "${description}"`);
 
   // Extract first image from content
   const imageMatch = content.match(/!\[.*?\]\((.*?)\)/);
