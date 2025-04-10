@@ -227,7 +227,7 @@ dd {
 
 /* Pull Quotes */
 blockquote:not(.twitter-tweet) {
-  margin: 2.5rem 0;
+  margin: 2rem 0;
   padding: 0.5rem 2rem;
   font-size: 1.4rem;
   line-height: 1.5;
