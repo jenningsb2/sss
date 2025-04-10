@@ -276,6 +276,7 @@ blockquote:not(.twitter-tweet) p {
   border: none;
 }
 
+/* All images are big and centered */
 img {
   display: block;
   max-width: 100%;
