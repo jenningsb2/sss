@@ -50,6 +50,15 @@ function processMarkdownFile(filePath) {
   const cleanName = basename.replace(/^\d{4}-\d{2}-\d{2}-(.+)\.md$/, '$1.md');
   const isIndex = cleanName.toLowerCase() === 'index.md';
 
+  // Extract title and description from content
+  const titleMatch = content.match(/^#\s+(.+)$/m);
+  const title = titleMatch ? titleMatch[1] : path.basename(cleanName, '.md');
+
+  // Find first block-level element after the title
+  const contentAfterTitle = content.slice(content.indexOf(title) + title.length);
+  const firstBlockMatch = contentAfterTitle.match(/^(?:>|\n\n)(.+?)(?:\n\n|$)/s);
+  const description = firstBlockMatch ? firstBlockMatch[1].trim().replace(/^>\s*/, '') : '';
+
   // If this is the index file, replace the writing template variable
   if (isIndex) {
     const writingEntries = generateWritingEntries();
@@ -72,11 +81,23 @@ function processMarkdownFile(filePath) {
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <!-- Open Graph / Facebook -->
+        <meta property="og:type" content="article">
+        <meta property="og:title" content="${title}">
+        <meta property="og:description" content="${description}">
+        <meta property="og:url" content="https://thenanyu.com/${cleanName.replace('.md', '.html')}">
+
+        <!-- Twitter -->
+        <meta name="twitter:card" content="summary_large_image">
+        <meta name="twitter:title" content="${title}">
+        <meta name="twitter:description" content="${description}">
+
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,600;1,400;1,600&family=Spectral:ital,wght@0,400;0,600;1,400;1,600&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="styles.css?v=${Date.now()}">
-        <title>${path.basename(cleanName, '.md')}</title>
+        <title>${title}</title>
     </head>
     <body>
         ${htmlContent}
