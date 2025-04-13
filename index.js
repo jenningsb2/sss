@@ -105,6 +105,9 @@ function processMarkdownFile(filePath) {
         <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,600;1,400;1,600&family=Spectral:ital,wght@0,400;0,600;1,400;1,600&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="styles.css?v=${Date.now()}">
         <title>${title}</title>
+        <!-- Cloudflare Web Analytics -->
+        <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "319d6ec648d04e29ba33fca61256833f"}'></script>
+        <!-- End Cloudflare Web Analytics -->
     </head>
     <body>
         ${htmlContent}
