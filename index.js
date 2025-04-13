@@ -5,6 +5,7 @@ const footnote = require('marked-footnote');
 const definitionList = require('./marked-definition-list');
 const tweetExtension = require('./marked-tweet');
 const { startWatcher } = require('./watcher');
+const RSS = require('rss');
 
 const pagesDir = path.join(__dirname, 'pages');
 const outputDir = path.join(__dirname, 'dist');
@@ -207,6 +208,71 @@ function processAllMarkdownFiles() {
   processDir(pagesDir);
 }
 
+function generateRSSFeed() {
+  const feed = new RSS({
+    title: 'Nan Yu\'s Writing',
+    description: 'Thoughts on technology, design, and more',
+    feed_url: 'https://thenanyu.com/feed.xml',
+    site_url: 'https://thenanyu.com',
+    image_url: 'https://thenanyu.com/assets/images/profile.jpg',
+    managingEditor: 'Nan Yu',
+    webMaster: 'Nan Yu',
+    copyright: `${new Date().getFullYear()} Nan Yu`,
+    language: 'en',
+    pubDate: new Date().toUTCString(),
+    ttl: '60'
+  });
+
+  const writingDir = path.join(pagesDir, 'writing');
+  if (!fs.existsSync(writingDir)) {
+    return;
+  }
+
+  const files = fs.readdirSync(writingDir)
+    .filter(file => file.endsWith('.md'))
+    .map(file => {
+      const filePath = path.join(writingDir, file);
+      const content = fs.readFileSync(filePath, 'utf-8');
+      const titleMatch = content.match(/^#\s+(.*?)(?:\n|$)/);
+      const title = titleMatch ? titleMatch[1].trim() : path.basename(file, '.md');
+
+      const dateMatch = file.match(/^(\d{4})-(\d{2})-(\d{2})-/);
+      let pubDate = new Date();
+
+      if (dateMatch) {
+        const [year, monthNum, dayNum] = dateMatch.slice(1);
+        pubDate = new Date(year, parseInt(monthNum) - 1, parseInt(dayNum));
+      }
+
+      const descMatch = content.match(/^#.*?\n>\s*(.*?)(?:\n|$)/s);
+      const description = descMatch ? descMatch[1].trim() : '';
+
+      const cleanName = file.replace(/^\d{4}-\d{2}-\d{2}-(.+)\.md$/, '$1');
+      const url = `https://thenanyu.com/${cleanName}.html`;
+
+      return {
+        title,
+        description,
+        url,
+        pubDate
+      };
+    })
+    .sort((a, b) => b.pubDate - a.pubDate);
+
+  files.forEach(file => {
+    feed.item({
+      title: file.title,
+      description: file.description,
+      url: file.url,
+      date: file.pubDate,
+      guid: file.url
+    });
+  });
+
+  fs.writeFileSync(path.join(outputDir, 'feed.xml'), feed.xml({ indent: true }));
+  console.log('Generated RSS feed');
+}
+
 function compile() {
   console.log('Compiling...');
 
@@ -215,6 +281,7 @@ function compile() {
 
   copyAssets();
   processAllMarkdownFiles();
+  generateRSSFeed();
   console.log('Compilation complete.');
 }
 
