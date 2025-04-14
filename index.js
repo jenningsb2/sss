@@ -262,6 +262,9 @@ function generateRSSFeed() {
       processedContent = processedContent.replace(/{{date}}/g, formattedDate);
     }
 
+    // Remove the first H1 heading from content for RSS feed
+    processedContent = processedContent.replace(/^#\s+.*?(\n|$)/, '');
+
     // Convert markdown to HTML
     let htmlContent = marked(processedContent);
 

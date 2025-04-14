@@ -47,7 +47,7 @@ const tweetExtension = {
     // Use Twitter's official embed approach - exact format is important for the widget script
     return `<div class="tweet-container">
   <blockquote class="twitter-tweet">
-    <a style="visibility: hidden;" href="https://twitter.com/${token.username}/status/${token.tweetId}">View on X/Twitter</a>
+    <a style="opacity: 0;" href="https://twitter.com/${token.username}/status/${token.tweetId}">View on X/Twitter</a>
   </blockquote>
   <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 </div>`;
