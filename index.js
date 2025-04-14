@@ -262,8 +262,7 @@ function generateRSSFeed() {
       guid: file.url,
       custom_elements: [
         { 'content:encoded': { _cdata: htmlContent } },
-        { 'dc:creator': 'Nan Yu' },
-        { 'dc:date': file.dateObj ? file.dateObj.toISOString() : new Date().toISOString() }
+        { 'dc:creator': 'Nan Yu' }
       ]
     });
   });
