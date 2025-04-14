@@ -71,14 +71,14 @@ function processMarkdownFile(filePath) {
     content = content.replace(/{{writing}}/g, writingEntries);
   }
 
-  // Add home link for non-index files
+  // Add home link and copyright footer for non-index files in web output
+  let webContent = content;
   if (!isIndex) {
-    content = '[← Home](index.html)\n\n' + content;
-    // Add copyright footer using footnotes styling
-    content += `\n\n<div class="footnotes">\n<p>© Nan Yu – ${currentYear}</p>\n</div>`;
+    webContent = '[← Home](index.html)\n\n' + webContent;
+    webContent += `\n\n<div class="footnotes">\n<p>© Nan Yu – ${currentYear}</p>\n</div>`;
   }
 
-  const htmlContent = marked(content);
+  const htmlContent = marked(webContent);
   const outputPath = path.join(outputDir, cleanName.replace('.md', '.html'));
 
   const htmlTemplate = `
@@ -220,29 +220,46 @@ function generateRSSFeed() {
     feed_url: 'https://thenanyu.com/feed.xml',
     site_url: 'https://thenanyu.com',
     image_url: 'https://thenanyu.com/assets/images/profile.jpeg',
-    managingEditor: 'Nan Yu',
-    webMaster: 'Nan Yu',
     copyright: `${new Date().getFullYear()} Nan Yu`,
     language: 'en',
     pubDate: new Date().toUTCString(),
-    ttl: '60'
+    ttl: '60',
+    custom_namespaces: {
+      'content': 'http://purl.org/rss/1.0/modules/content/',
+      'dc': 'http://purl.org/dc/elements/1.1/'
+    }
   });
 
   const files = processMarkdownFiles();
 
   files.forEach(file => {
+    // Convert markdown to HTML
+    let htmlContent = marked(file.content);
+
+    // Make all URLs absolute
+    htmlContent = htmlContent.replace(
+      /(src|href)="(?!https?:\/\/)([^"]+)"/g,
+      (match, attr, url) => `${attr}="https://thenanyu.com/${url}"`
+    );
+
+    // Clean up any HTML entities in the title
+    const cleanTitle = file.title.replace(/&nbsp;/g, ' ');
+
     feed.item({
-      title: file.title,
+      title: cleanTitle,
       description: file.description,
       url: file.url,
       date: file.dateObj || new Date(),
       guid: file.url,
       custom_elements: [
-        { 'content:encoded': file.htmlContent }
+        { 'content:encoded': { _cdata: htmlContent } },
+        { 'dc:creator': 'Nan Yu' },
+        { 'dc:date': file.dateObj ? file.dateObj.toISOString() : new Date().toISOString() }
       ]
     });
   });
 
+  // Write the feed
   fs.writeFileSync(path.join(outputDir, 'feed.xml'), feed.xml({ indent: true }));
   console.log('Generated RSS feed');
 }
