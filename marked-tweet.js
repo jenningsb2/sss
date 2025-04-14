@@ -12,26 +12,31 @@ const tweetExtension = {
     if (match) {
       const url = match[1].trim();
 
-      // Extract tweet ID from the URL
+      // Extract tweet ID and username from the URL
       let tweetId = '';
+      let username = '';
 
       // Try to extract tweet ID from various URL formats
       if (url.includes('status/')) {
         // Extract from URL with status/
-        const parts = url.split('status/');
-        if (parts.length > 1) {
-          tweetId = parts[1].split('?')[0].split('/')[0];
+        const urlParts = url.split('/');
+        const statusIndex = urlParts.findIndex(part => part === 'status');
+        if (statusIndex > 0 && statusIndex < urlParts.length - 1) {
+          username = urlParts[statusIndex - 1];
+          tweetId = urlParts[statusIndex + 1].split('?')[0];
         }
       } else if (/^\d+$/.test(url)) {
-        // If it's just a number, assume it's the tweet ID
-        tweetId = url;
+        // If it's just a number, we can't use it - need a full URL with username
+        console.warn('Tweet embedding requires a full URL with username, not just a tweet ID');
+        return null;
       }
 
-      if (tweetId) {
+      if (tweetId && username) {
         return {
           type: 'tweet',
           raw: match[0],
           tweetId: tweetId,
+          username: username,
           tokens: []
         };
       }
@@ -39,10 +44,10 @@ const tweetExtension = {
     return null;
   },
   renderer(token) {
-    // Use Twitter's official embed approach
+    // Use Twitter's official embed approach - exact format is important for the widget script
     return `<div class="tweet-container">
   <blockquote class="twitter-tweet">
-    <a href="https://twitter.com/x/status/${token.tweetId}"></a>
+    <a style="visibility: hidden;" href="https://twitter.com/${token.username}/status/${token.tweetId}">View on X/Twitter</a>
   </blockquote>
   <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 </div>`;

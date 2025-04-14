@@ -288,8 +288,9 @@ function generateRSSFeed() {
   });
 
   // Write the feed
-  fs.writeFileSync(path.join(outputDir, 'feed.xml'), feed.xml({ indent: true }));
-  console.log('Generated RSS feed');
+  const feedPath = path.join(outputDir, 'feed.xml');
+  fs.writeFileSync(feedPath, feed.xml({ indent: true }));
+  console.log(`Generated RSS feed at: ${feedPath}`);
 }
 
 function compile() {
