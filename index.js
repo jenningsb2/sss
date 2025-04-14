@@ -120,24 +120,23 @@ function processMarkdownFile(filePath) {
   console.log(`Generated ${outputPath}`);
 }
 
-// Function to generate the writing entries
-function generateWritingEntries() {
+// Function to process markdown files and return structured data
+function processMarkdownFiles() {
   const writingDir = path.join(pagesDir, 'writing');
 
   // Check if the writing directory exists
   if (!fs.existsSync(writingDir)) {
-    return 'No writing entries found.\n\n';
+    return [];
   }
 
   // Get all markdown files in the writing directory
-  const files = fs.readdirSync(writingDir)
+  return fs.readdirSync(writingDir)
     .filter(file => file.endsWith('.md'))
     .map(file => {
       const filePath = path.join(writingDir, file);
       const content = fs.readFileSync(filePath, 'utf-8');
 
       // Extract title from the first line (assuming it's a heading)
-      // This regex is more robust and handles titles with special characters
       const titleMatch = content.match(/^#\s+(.*?)(?:\n|$)/);
       const title = titleMatch ? titleMatch[1].trim() : path.basename(file, '.md');
 
@@ -154,19 +153,25 @@ function generateWritingEntries() {
       }
 
       // Extract description from the blockquote
-      // This regex is more robust and handles descriptions with special characters
       const descMatch = content.match(/^#.*?\n>\s*(.*?)(?:\n|$)/s);
       const description = descMatch ? descMatch[1].trim() : '';
 
       // Clean filename for output
       const cleanName = file.replace(/^\d{4}-\d{2}-\d{2}-(.+)\.md$/, '$1');
+      const url = `https://thenanyu.com/${cleanName}.html`;
+
+      // Convert markdown content to HTML
+      const htmlContent = marked(content);
 
       return {
         title,
         date,
         dateObj,
         description,
-        filename: cleanName
+        filename: cleanName,
+        url,
+        content,
+        htmlContent
       };
     })
     .sort((a, b) => {
@@ -174,14 +179,14 @@ function generateWritingEntries() {
       // If date is "Coming soon", put it at the end
       if (!a.dateObj) return 1;
       if (!b.dateObj) return -1;
-
-      // Compare dates directly (newest first)
-      const result = b.dateObj.getTime() - a.dateObj.getTime();
-      console.log(`Comparing ${a.title} (${a.dateObj.toISOString()}) with ${b.title} (${b.dateObj.toISOString()}) = ${result}`);
-      return result;
+      return b.dateObj.getTime() - a.dateObj.getTime();
     });
+}
 
-  // Generate the writing entries
+// Function to generate the writing entries
+function generateWritingEntries() {
+  const files = processMarkdownFiles();
+
   if (files.length === 0) {
     return 'No writing entries found.\n\n';
   }
@@ -223,49 +228,18 @@ function generateRSSFeed() {
     ttl: '60'
   });
 
-  const writingDir = path.join(pagesDir, 'writing');
-  if (!fs.existsSync(writingDir)) {
-    return;
-  }
-
-  const files = fs.readdirSync(writingDir)
-    .filter(file => file.endsWith('.md'))
-    .map(file => {
-      const filePath = path.join(writingDir, file);
-      const content = fs.readFileSync(filePath, 'utf-8');
-      const titleMatch = content.match(/^#\s+(.*?)(?:\n|$)/);
-      const title = titleMatch ? titleMatch[1].trim() : path.basename(file, '.md');
-
-      const dateMatch = file.match(/^(\d{4})-(\d{2})-(\d{2})-/);
-      let pubDate = new Date();
-
-      if (dateMatch) {
-        const [year, monthNum, dayNum] = dateMatch.slice(1);
-        pubDate = new Date(year, parseInt(monthNum) - 1, parseInt(dayNum));
-      }
-
-      const descMatch = content.match(/^#.*?\n>\s*(.*?)(?:\n|$)/s);
-      const description = descMatch ? descMatch[1].trim() : '';
-
-      const cleanName = file.replace(/^\d{4}-\d{2}-\d{2}-(.+)\.md$/, '$1');
-      const url = `https://thenanyu.com/${cleanName}.html`;
-
-      return {
-        title,
-        description,
-        url,
-        pubDate
-      };
-    })
-    .sort((a, b) => b.pubDate - a.pubDate);
+  const files = processMarkdownFiles();
 
   files.forEach(file => {
     feed.item({
       title: file.title,
       description: file.description,
       url: file.url,
-      date: file.pubDate,
-      guid: file.url
+      date: file.dateObj || new Date(),
+      guid: file.url,
+      custom_elements: [
+        { 'content:encoded': file.htmlContent }
+      ]
     });
   });
 
