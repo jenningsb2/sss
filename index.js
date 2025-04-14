@@ -233,8 +233,17 @@ function generateRSSFeed() {
   const files = processMarkdownFiles();
 
   files.forEach(file => {
+    // Process {{date}} variables in the content
+    let processedContent = file.content;
+    if (file.dateObj) {
+      const monthName = file.dateObj.toLocaleString('en-US', { month: 'short' });
+      const year = file.dateObj.getFullYear();
+      const formattedDate = `*${monthName} ${year}*`;
+      processedContent = processedContent.replace(/{{date}}/g, formattedDate);
+    }
+
     // Convert markdown to HTML
-    let htmlContent = marked(file.content);
+    let htmlContent = marked(processedContent);
 
     // Make all URLs absolute
     htmlContent = htmlContent.replace(
