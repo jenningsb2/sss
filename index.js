@@ -215,11 +215,11 @@ function processAllMarkdownFiles() {
 
 function generateRSSFeed() {
   const feed = new RSS({
-    title: 'Nan Yu\'s Writing',
-    description: 'Thoughts on technology, design, and more',
+    title: 'Nan Yu',
+    description: 'Thoughts on technology, design, product, and the world we live in',
     feed_url: 'https://thenanyu.com/feed.xml',
     site_url: 'https://thenanyu.com',
-    image_url: 'https://thenanyu.com/assets/images/profile.jpg',
+    image_url: 'https://thenanyu.com/assets/images/profile.jpeg',
     managingEditor: 'Nan Yu',
     webMaster: 'Nan Yu',
     copyright: `${new Date().getFullYear()} Nan Yu`,
