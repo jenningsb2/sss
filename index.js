@@ -39,17 +39,32 @@ function processMarkdownFile(filePath) {
   const cleanName = basename.replace(/^\d{4}-\d{2}-\d{2}-(.+)\.md$/, '$1.md');
   const outputPath = path.join(outputDir, cleanName.replace('.md', '.html'));
 
+  // Determine page title
+  let pageTitle = 'Bailey Jennings';
+  if (cleanName === 'index.md') {
+    pageTitle = 'Bailey Jennings';
+  } else {
+    // Extract title from the markdown content (first h1)
+    const titleMatch = content.match(/^#\s+(.+)$/m);
+    if (titleMatch) {
+      pageTitle = titleMatch[1] + ' | Bailey Jennings';
+    } else {
+      pageTitle = path.basename(cleanName, '.md') + ' | Bailey Jennings';
+    }
+  }
+
   const htmlTemplate = `
     <!DOCTYPE html>
     <html lang="en">
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="icon" href="/assets/favicon.ico" type="image/x-icon">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Jacquard+12&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="styles.css">
-        <title>${path.basename(cleanName, '.md')}</title>
+        <title>${pageTitle}</title>
     </head>
     <body>
         ${htmlContent}
