@@ -111,3 +111,39 @@ watcher
   });
 
 console.log('Watching for changes...');
+
+// At the bottom of index.js
+const isOnce = process.argv.includes('--once');
+
+// Initial compilation
+compile();
+
+if (!isOnce) {
+  // Watch for changes only if not in once mode
+  const watcher = chokidar.watch([
+    path.join(pagesDir, '**', '*.md'),
+    stylesFile
+  ], {
+    persistent: true,
+    ignoreInitial: true
+  });
+
+  watcher
+    .on('add', path => {
+      console.log(`File ${path} has been added`);
+      compile();
+    })
+    .on('change', path => {
+      console.log(`File ${path} has been changed`);
+      compile();
+    })
+    .on('unlink', path => {
+      console.log(`File ${path} has been removed`);
+      compile();
+    });
+
+  console.log('Watching for changes...');
+} else {
+  console.log('Build complete. Exiting...');
+  process.exit(0); // Add this line to explicitly exit
+}
