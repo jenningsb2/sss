@@ -242,3 +242,12 @@ blockquote p:last-child {
     color: color-mix(in srgb, var(--text-color) 50%, var(--link-color) 25%);
   }
 }
+
+/* images */
+
+img {
+  max-width: 25%;
+  height: auto;
+  display: block;
+  margin: 1.5rem auto;
+}
