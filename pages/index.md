@@ -4,7 +4,7 @@
 
 ---
 
-**Now**—I am currently a *Lead Product Manager* at [JobGet](https://www.snagajob.com) working on all recruiter facing advertising products as well as optimization worker registrations and our native application flow.
+**Now**—I am currently a *Lead Product Manager* at [JobGet](https://www.snagajob.com) working on all recruiter facing advertising products as well as growing worker registrations via our native application flow.
 
 ---
 I'm a software product manager who creates high-craft products for real people facing real challenges. 
