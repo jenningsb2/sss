@@ -4,14 +4,14 @@
 
 ---
 
-**Now**—I am currently a *Lead Product Manager* at [JobGet](https://www.snagajob.com) working on all recruiter facing advertising products as well as growing worker registrations via our native application flow.
+**Now**: I am currently a *Lead Product Manager* at [JobGet](https://www.snagajob.com) working on all recruiter facing advertising products as well as growing worker registrations via our native application flow.
 
 ---
 I'm a software product manager who creates high-craft products for real people facing real challenges. 
 
-I lead with *decisive action* and *clear communication*, serving as both translator and bridge between departments.
+I lead with decisive action and clear communication, serving as both translator and bridge between departments.
 
-My leadership balances *ambitious* vision with *practical* execution, helping teams produce elegant solutions to complex problems. I help champion ideas where designers and engineers can do their most ambitious work while maintaining a laser focus on what truly matters: ***creating products that make users better at achieving their goals.***
+My leadership balances ambitious vision with practical execution, helping teams produce elegant solutions to complex problems. I help champion ideas where designers and engineers can do their most ambitious work while maintaining a laser focus on what truly matters: ***creating products that make users better at achieving their goals.***
 
 My approach combines data literacy, design passion, and technical understanding to accelerate teams and organizations.
 
