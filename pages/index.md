@@ -18,7 +18,7 @@ My approach combines data literacy, design passion, and technical understanding 
 
 ## Product philosophy
 
-*Life is too short for bad software.* The tools we build influence how the world works and should make our customers better at achieving their personal goals and ambitions. Its not enough to build a 'good tool'—the tools we build should help people be better versions of themselves and make progress towards their own definition of [self actualization](https://en.wikipedia.org/wiki/Self-actualization).
+*Life is too short for bad software.* It's not enough to build a "good tool"—the tools we build should help people become better versions of themselves and assist them in making progress toward their own definition of [self actualization](https://en.wikipedia.org/wiki/Self-actualization).
 
 <!-- ## Projects I'm proud of
 
