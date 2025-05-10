@@ -11,14 +11,14 @@ I'm a software product manager who creates high-craft products for real people f
 
 I lead with decisive action and clear communication, serving as both translator and bridge between departments.
 
-My leadership balances ambitious vision with practical execution, helping teams produce elegant solutions to complex problems. I help champion ideas where designers and engineers can do their most ambitious work while maintaining a laser focus on what truly matters: ***creating products that make users better at achieving their goals.***
+My leadership balances ambitious vision with practical execution, helping teams produce elegant solutions to complex problems. I help champion ideas where designers and engineers can do their most ambitious work while maintaining a laser focus on what truly matters: *creating products that make users better at achieving their goals.*
 
 My approach combines data literacy, design passion, and technical understanding to accelerate teams and organizations.
 
 
 ## Product philosophy
 
-***There is too much bad software.*** The tools we build influence how the world works and should make our customers better at achieving their personal goals and ambitions. Its not enough to build a 'good tool'—the tools we build should help people be better versions of themselves and make progress towards their own definition of **[self actualization](https://en.wikipedia.org/wiki/Self-actualization)**.
+*There is too much bad software.* The tools we build influence how the world works and should make our customers better at achieving their personal goals and ambitions. Its not enough to build a 'good tool'—the tools we build should help people be better versions of themselves and make progress towards their own definition of [self actualization](https://en.wikipedia.org/wiki/Self-actualization).
 
 <!-- ## Projects I'm proud of
 
