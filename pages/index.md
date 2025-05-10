@@ -1,30 +1,37 @@
 # Bailey Jennings
 
-Welcome 👋
-
 ![](assets/me.jpeg)
 
-I'm a software product manager based in the Richmond, VA area.
-
 ---
 
-Lead Product Manager at [JobGet](https://www.snagajob.com)
-Lives in Richmond, VA
-
-<!-- ## Talks and Interviews
-
-[Interview on Lenny's Podcast](https://www.youtube.com/watch?v=nTr21kgCFF4)
-: *Jan 2025* — "Linear's secrets to building beloved B2B products" we get tactical
-
-[The Heirloom Tomato Org Chart](https://www.youtube.com/watch?v=I4vvBidQcck)
-: *Jun 2024* — a talk given at Figma Config about anti-patterns in startup org chart design -->
-
-<!-- ## Writing
-
-[There has never been a better time to be a coder](coder.html)
-: *Apr 2025* — Vibe coding, low code, medium code... it's all good, and it's all a lot of fun -->
+**Now**—I am currently a *Lead Product Manager* at [JobGet](https://www.snagajob.com) working on all recruiter facing advertising products as well as optimization worker registrations and our native application flow.
 
 ---
+I'm a software product manager who creates high-craft products for real people facing real challenges. 
+
+I lead with *decisive action* and *clear communication*, serving as both translator and bridge between departments.
+
+My leadership balances *ambitious* vision with *practical* execution, helping teams produce elegant solutions to complex problems. I help champion ideas where designers and engineers can do their most ambitious work while maintaining a laser focus on what truly matters: ***creating products that make users better at achieving their goals.***
+
+My approach combines data literacy, design passion, and technical understanding to accelerate teams and organizations.
+
+
+## Product philosophy
+
+***There is too much bad software.*** The tools we build influence how the world works and should make our customers better at achieving their personal goals and ambitions. Its not enough to build a 'good tool'—the tools we build should help people be better versions of themselves and make progress towards their own definition of **[self actualization](https://en.wikipedia.org/wiki/Self-actualization)**.
+
+<!-- ## Projects I'm proud of
+
+### JobGet (acq. Snagajob) (2024-Present)
+
+- Reconceptualized recruiter dashboard, increasing engagement 37%
+- Architected cross-platform notification system
+- Led team through 3 pivotal product transformations
+
+### Snagajob
+
+- Developed recruitment optimization algorithm that reduced time-to-hire by 41%
+- Pioneered attention-economic approach to B2B SaaS interfaces -->
 
 ## Contact
 

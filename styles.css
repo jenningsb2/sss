@@ -7,6 +7,7 @@
   --link-hover-color: #2c5282;
   --border-color: #e2e8f0;
   --heading-color: #1a202c;
+  --bold-color: #fabf10;
 }
 
 /* Dark mode */
@@ -15,10 +16,11 @@
     --background-color: #0F0F0F;
     --text-color: #e2e8f0;
     --text-color-light: #a0aec0;
-    --link-color: #00d7ba;
+    --link-color: #fabf10;
     --link-hover-color: #90cdf4;
     --border-color: #2d3748;
     --heading-color: #f7fafc;
+    --bold-color: #fabf10;
   }
 }
 
@@ -55,7 +57,8 @@ body {
 /* Typography */
 h1, h2, h3, h4, h5, h6 {
   color: var(--heading-color);
-  font-family: 'Jacquard 12', serif;
+  font-family: "EB Garamond", serif;
+  font-style: italic;
   font-weight: 700;
   line-height: 1.25;
   margin: 1.25rem 0 0.75rem;
@@ -127,11 +130,15 @@ pre code {
 
 /* Italics and bold */
 em {
-  color: var(--text-color-light);
+  color: var(--text-color);
+  font-family: "EB Garamond", serif;
+  font-style: italic;
+  font-weight: 600;
+  font-size: 1.125rem;
 }
 
 strong {
-  color: var(--heading-color);
+  color: var(--bold-color);
 }
 
 /* Media queries for responsive design */
