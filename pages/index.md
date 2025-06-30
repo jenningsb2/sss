@@ -4,7 +4,9 @@
 
 ---
 
-**Now**: I am currently a *Lead Product Manager* at [JobGet](https://www.snagajob.com) working on all recruiter facing advertising products as well as growing worker registrations via our native application flow.
+**Now**: I am currently a *Lead Product Manager* at JobGet primarily working on [Snagajob](https://www.snagajob.com) products. Right now, I'm working to build the foundation of our applied AI infrastructure.
+
+PMing in the applied AI space is changing by the minute, but I'm currently working with bleeding edge platforms such as LangSmith for prompt engineering, offline evals, and observability/tracing.
 
 ---
 I'm a software product manager who creates high-craft products for real people facing real challenges. 
