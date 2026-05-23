@@ -6,7 +6,12 @@
 
 *Coming soon to the App Store.*
 
-<img src="/assets/murphy/murphy-appstore1.png" alt="Murphy app hero screenshot" class="screenshot-hero">
+<div class="screenshots">
+  <img src="/assets/murphy/murphy-appstore1.png" alt="Murphy screenshot">
+  <img src="/assets/murphy/murphy-appstore2.png" alt="Murphy screenshot">
+  <img src="/assets/murphy/murphy-appstore3.png" alt="Murphy screenshot">
+  <img src="/assets/murphy/murphy-appstore4.png" alt="Murphy screenshot">
+</div>
 
 ## What is the Murph?
 
@@ -33,12 +38,6 @@ So I started building. Preferably before Memorial Day rolled&nbsp;around.
 **A real history.** Every finished session lives in SwiftData, synced through your private CloudKit database across iPhone, iPad, Mac, and Watch. Personal records roll up automatically.
 
 **A shareable result card.** 1080×1080, four background options (white, black, Old Glory blue, Old Glory red), per-section splits, a `NEW PB` badge when you earn&nbsp;one.
-
-<div class="screenshots">
-  <img src="/assets/murphy/murphy-appstore2.png" alt="Murphy screenshot">
-  <img src="/assets/murphy/murphy-appstore3.png" alt="Murphy screenshot">
-  <img src="/assets/murphy/murphy-appstore4.png" alt="Murphy screenshot">
-</div>
 
 ## How it's built
 
