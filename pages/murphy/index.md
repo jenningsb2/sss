@@ -61,6 +61,10 @@ The Murphy mascot — a smiling American flag with arms and legs — comes in tw
 
 Murphy doesn't have a server. The app doesn't collect, send, or share your data. Everything stays on your device or in your own private iCloud. Full details on the [privacy&nbsp;page](/murphy/privacy).
 
+## Support
+
+Bug, feature request, or want to share your Murph time? Email me — see the [support&nbsp;page](/murphy/support).
+
 ## In memory
 
 Lt. Michael P. Murphy — June 28,&nbsp;2005.
