@@ -34,10 +34,16 @@ function processMarkdownFile(filePath) {
 
   const htmlContent = marked(content);
 
-  // Get the basename and strip out the date if it exists
+  // Strip the date prefix from the basename if present, and preserve subdirectories under pages/
   const basename = path.basename(filePath);
   const cleanName = basename.replace(/^\d{4}-\d{2}-\d{2}-(.+)\.md$/, '$1.md');
-  const outputPath = path.join(outputDir, cleanName.replace('.md', '.html'));
+  const relDir = path.relative(pagesDir, path.dirname(filePath));
+  const slug = cleanName.replace(/\.md$/, '');
+  // index.md → <relDir>/index.html. Other files → <relDir>/<slug>/index.html for clean URLs.
+  const outputPath = slug === 'index'
+    ? path.join(outputDir, relDir, 'index.html')
+    : path.join(outputDir, relDir, slug, 'index.html');
+  fs.ensureDirSync(path.dirname(outputPath));
 
   // Determine page title
   let pageTitle = 'Bailey Jennings';
@@ -63,7 +69,7 @@ function processMarkdownFile(filePath) {
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Jacquard+12&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="styles.css">
+        <link rel="stylesheet" href="/styles.css">
         <title>${pageTitle}</title>
     </head>
     <body>
