@@ -68,3 +68,5 @@ Bug, feature request, or want to share your Murph time? Email me — see the [su
 ## In memory
 
 Lt. Michael P. Murphy — June 28,&nbsp;2005.
+
+Support his legacy at the [Murph Foundation](https://murphfoundation.org/).
