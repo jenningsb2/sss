@@ -24,6 +24,10 @@ My approach combines data literacy, design passion, and technical understanding 
 
 *Life is too short for bad software.* It's not enough to build a "good tool"—the tools we build should help people become better versions of themselves and assist them in making progress toward their own definition of [self actualization](https://en.wikipedia.org/wiki/Self-actualization).
 
+## Made
+
+Things I tinker on in my spare time → [the&nbsp;list](/made)
+
 <!-- ## Projects I'm proud of
 
 ### JobGet (acq. Snagajob) (2024-Present)

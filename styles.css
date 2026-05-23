@@ -292,3 +292,51 @@ img.mascot {
   max-width: 180px;
   margin: 1.5rem auto;
 }
+
+/* "Made" project grid */
+.made-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 180px);
+  gap: 1.5rem;
+  margin: 2rem 0;
+  justify-content: start;
+}
+
+.made-card {
+  display: block;
+  text-decoration: none;
+  color: var(--text-color);
+}
+
+.made-card img {
+  max-width: 100%;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 1.25rem;
+  border: 1px solid var(--border-color);
+  transition: transform 0.15s ease;
+}
+
+.made-card:hover img {
+  transform: translateY(-2px);
+}
+
+.made-card-title {
+  margin-top: 0.6rem;
+  font-weight: 600;
+  color: var(--heading-color);
+}
+
+.made-card-blurb {
+  margin-top: 0.2rem;
+  color: var(--text-color-light);
+  font-size: 0.875rem;
+  line-height: 1.35;
+}
+
+@media (max-width: 640px) {
+  .made-grid {
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  }
+}
