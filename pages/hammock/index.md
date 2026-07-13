@@ -78,4 +78,4 @@ That's the moment this app is built for. When the idea finally arrives, on the h
 
 *Life is too short for bad software.* A voice note is a small thing, but the tool that catches your thinking ought to be quiet, fast, and yours, not one more place your words get held&nbsp;hostage.
 
-It is also, on purpose, not a final home. Notes are plain text you can copy out and carry into whatever tool or model you reach for next. The point is to catch a thought and keep moving, not to lock it&nbsp;away.
+It is also, on purpose, not a final home. Every note is plain text you can send straight out through the share sheet into whatever tool or model you reach for next. The point is to catch a thought and keep moving, not to lock it&nbsp;away.
