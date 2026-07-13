@@ -8,17 +8,19 @@
 
 ## Why I built it
 
-The best thinking I do rarely happens at the keyboard. It shows up on a walk, in the shower, somewhere away from the screen, and by the time I'm back at the computer the sharp version of the idea has usually gone soft. I think out loud, too. The clearest form of a thought is often the one I say, not the one I manage to&nbsp;type.
+The best thinking I do rarely happens at the keyboard. It shows up on a walk, in the shower, somewhere away from the screen, and by the time I'm back at the computer the sharp version of the idea has usually gone soft. Sitting down to type can kill the thought outright. Moving through the world is what knocks the ideas loose in the first&nbsp;place.
 
-But voice memos pile up as recordings you never play again, and most transcription apps hand back a wall of ums and false starts that's somehow worse than not writing it down. The AI apps that fix that mostly want you inside their box: their model, their cloud, their subscription, their copy of your audio. I didn't want to rent my own&nbsp;thoughts.
+For years my capture tool was the Apple Watch. A quick voice memo, or a reminder dictated to Siri. It was always on my wrist, but I never fully trusted it. I would second-guess whether Siri heard me right, and I was always a little afraid the idea I had mid-walk would come back garbled, or not come back at all. Capture only works if you trust the thing will still be there later, in a form you can actually&nbsp;find.
 
-Hammock is the tool I wanted for the away-from-the-computer part of the work. Say the messy version out loud, and get back a clean note you'd actually keep, on terms you&nbsp;set.
+Plain voice memos don't really solve it either. The workflow is record on the watch, wait for it to reach the phone, transcribe it somewhere, clean up the wall of ums and false starts, then file it so it's searchable. By the end the idea has cooled. The AI apps that collapse those steps mostly want you inside their box: their model, their cloud, their subscription, their copy of your audio. I didn't want to rent my own&nbsp;thoughts.
+
+Hammock is the tool I wanted for the away-from-the-computer part of the work. Talk for as long as you like, and get back a clean, titled, searchable note you'd actually keep, on terms you&nbsp;set.
 
 ## What it does
 
 **Talk, and get a written note back.** Record a voice memo and Hammock transcribes it, then rewrites the raw transcript into a clean, readable note (a title, a short summary, and the body) organized while you were still&nbsp;talking.
 
-**Add to a note by voice.** Notes aren't one-and-done. Come back to any note and record more, and the new audio is transcribed and folded into what's already&nbsp;there.
+**Add to a note by voice.** A thought is rarely finished the first time you say it. Come back to any note and keep talking, and the new audio is transcribed and stitched into what's already there, so one note grows with an idea instead of scattering across a dozen&nbsp;files.
 
 **Everything stays searchable.** Notes group by Today, Yesterday, and further back, and full-text search covers the title, summary, note, and the original transcript, so you can find a note by any words you actually&nbsp;said.
 
@@ -75,3 +77,5 @@ That's the moment this app is built for. When the idea finally arrives, on the h
 ## Made with intent
 
 *Life is too short for bad software.* A voice note is a small thing, but the tool that catches your thinking ought to be quiet, fast, and yours, not one more place your words get held&nbsp;hostage.
+
+It is also, on purpose, not a final home. Notes are plain text you can copy out and carry into whatever tool or model you reach for next. The point is to catch a thought and keep moving, not to lock it&nbsp;away.
