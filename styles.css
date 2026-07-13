@@ -288,6 +288,15 @@ img.mascot {
   margin: 1.5rem auto;
 }
 
+/* project page app icon: featured near the top when there are no screenshots */
+img.app-icon {
+  max-width: 150px;
+  width: 150px;
+  margin: 1.5rem 0;
+  border-radius: 22%;
+  border: 1px solid var(--border-color);
+}
+
 /* "Made" project grid */
 .made-grid {
   display: grid;
