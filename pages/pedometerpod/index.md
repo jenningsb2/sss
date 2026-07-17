@@ -6,13 +6,45 @@
 
 <img src="/assets/pedometerpod/pedometerpod-icon-light.png" alt="The PedometerPod app icon" class="app-icon">
 
-<img src="/assets/pedometerpod/pedometerpod-mac.png" alt="PedometerPod macOS menu bar app" class="screenshot-hero">
+<div class="device device-mac">
+  <div class="device-bezel">
+    <div class="device-camera" aria-hidden="true"></div>
+    <div class="device-screen">
+      <img src="/assets/pedometerpod/pedometerpod-mac.png" alt="PedometerPod macOS menu bar app">
+    </div>
+  </div>
+  <div class="device-base" aria-hidden="true"></div>
+</div>
 
 <div class="screenshots">
-  <img src="/assets/pedometerpod/pedometerpod-dashboard.png" alt="PedometerPod dashboard showing daily goal progress and weekly steps">
-  <img src="/assets/pedometerpod/pedometerpod-history.png" alt="PedometerPod history of walking sessions synced to Health">
-  <img src="/assets/pedometerpod/pedometerpod-share.png" alt="PedometerPod shareable step card">
-  <img src="/assets/pedometerpod/pedometerpod-goal.png" alt="PedometerPod daily step goal editor">
+  <div class="device device-phone">
+    <div class="device-bezel">
+      <div class="device-screen">
+        <img src="/assets/pedometerpod/pedometerpod-dashboard.png" alt="PedometerPod dashboard showing daily goal progress and weekly steps">
+      </div>
+    </div>
+  </div>
+  <div class="device device-phone">
+    <div class="device-bezel">
+      <div class="device-screen">
+        <img src="/assets/pedometerpod/pedometerpod-history.png" alt="PedometerPod history of walking sessions synced to Health">
+      </div>
+    </div>
+  </div>
+  <div class="device device-phone">
+    <div class="device-bezel">
+      <div class="device-screen">
+        <img src="/assets/pedometerpod/pedometerpod-share.png" alt="PedometerPod shareable step card">
+      </div>
+    </div>
+  </div>
+  <div class="device device-phone">
+    <div class="device-bezel">
+      <div class="device-screen">
+        <img src="/assets/pedometerpod/pedometerpod-goal.png" alt="PedometerPod daily step goal editor">
+      </div>
+    </div>
+  </div>
 </div>
 
 I walk on a treadmill at my Mac a lot. It's a great way to get steps, except nothing counted them.
