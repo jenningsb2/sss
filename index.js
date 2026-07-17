@@ -14,7 +14,7 @@ const SITE_URL = 'https://baileyjennings.com';
 const SITE_NAME = 'Bailey Jennings';
 const DEFAULT_DESCRIPTION =
   'Software product manager who creates high-craft products for real people facing real challenges.';
-const DEFAULT_IMAGE = '/assets/me.jpeg';
+const DEFAULT_IMAGE = '/assets/me.webp';
 
 // Configure marked with extensions
 marked.use({ extensions: [definitionList] });

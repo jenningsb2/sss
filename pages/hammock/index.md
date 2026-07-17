@@ -4,7 +4,7 @@
 
 > Talk into your phone or watch. Get back a clean note, using the AI you&nbsp;choose.
 
-<img src="/assets/hammock/hammock-iOS-Default-1024x1024@1x.png" alt="The Hammock app icon" class="app-icon">
+<img src="/assets/hammock/hammock-iOS-Default-1024x1024@1x.webp" alt="The Hammock app icon" class="app-icon">
 
 ## Why I built it
 

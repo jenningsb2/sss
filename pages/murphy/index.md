@@ -7,10 +7,10 @@
 *Coming soon to the App Store.*
 
 <div class="screenshots">
-  <img src="/assets/murphy/murphy-appstore1.png" alt="Murphy screenshot">
-  <img src="/assets/murphy/murphy-appstore2.png" alt="Murphy screenshot">
-  <img src="/assets/murphy/murphy-appstore3.png" alt="Murphy screenshot">
-  <img src="/assets/murphy/murphy-appstore4.png" alt="Murphy screenshot">
+  <img src="/assets/murphy/murphy-appstore1.webp" alt="Murphy screenshot">
+  <img src="/assets/murphy/murphy-appstore2.webp" alt="Murphy screenshot">
+  <img src="/assets/murphy/murphy-appstore3.webp" alt="Murphy screenshot">
+  <img src="/assets/murphy/murphy-appstore4.webp" alt="Murphy screenshot">
 </div>
 
 ## What is the Murph?
@@ -54,7 +54,7 @@ The Murphy mascot — a smiling American flag with arms and legs — comes in tw
 - **Runner** runs along the gradient progress bar during workouts. *In motion, working.*
 - **Flex** shows up on the picker, the tip jar, the share card, and the watch's finished screen. *Celebration,&nbsp;identity.*
 
-<img src="/assets/murphy/murphy-flex-sticker.png" alt="The Murphy mascot" class="mascot">
+<img src="/assets/murphy/murphy-flex-sticker.webp" alt="The Murphy mascot" class="mascot">
 
 
 ## Privacy
