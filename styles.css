@@ -526,13 +526,20 @@ body.lightbox-open {
   backdrop-filter: blur(0px);
   opacity: 0;
   transition:
-    opacity 0.32s cubic-bezier(0.2, 0.8, 0.2, 1),
-    backdrop-filter 0.32s cubic-bezier(0.2, 0.8, 0.2, 1),
-    -webkit-backdrop-filter 0.32s cubic-bezier(0.2, 0.8, 0.2, 1);
+    opacity 0.42s cubic-bezier(0.22, 1, 0.36, 1),
+    backdrop-filter 0.42s cubic-bezier(0.22, 1, 0.36, 1),
+    -webkit-backdrop-filter 0.42s cubic-bezier(0.22, 1, 0.36, 1);
   cursor: zoom-out;
 }
 
 .lightbox.is-open {
+  opacity: 1;
+  -webkit-backdrop-filter: blur(16px) saturate(1.2);
+  backdrop-filter: blur(16px) saturate(1.2);
+}
+
+.lightbox.is-closing {
+  /* Backdrop stays put on the way home so empty device frames never flash through. */
   opacity: 1;
   -webkit-backdrop-filter: blur(16px) saturate(1.2);
   backdrop-filter: blur(16px) saturate(1.2);
@@ -543,10 +550,18 @@ body.lightbox-open {
   box-shadow: 0 24px 64px color-mix(in srgb, #000 35%, transparent);
   user-select: none;
   -webkit-user-drag: none;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  transform: translateZ(0);
+}
+
+.lightbox.is-closing .lightbox-image {
+  /* shadow ease handled inline so it syncs with the FLIP return */
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .lightbox {
+  .lightbox,
+  .lightbox.is-closing {
     transition: opacity 0.01ms linear;
   }
 }
