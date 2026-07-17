@@ -293,8 +293,15 @@ img.app-icon {
   max-width: 150px;
   width: 150px;
   margin: 1.5rem 0;
-  border-radius: 22%;
-  border: 1px solid var(--border-color);
+  border: none;
+  border-radius: 0;
+  -webkit-mask-image: url("/assets/squircle-mask.svg");
+  mask-image: url("/assets/squircle-mask.svg");
+  -webkit-mask-size: 100% 100%;
+  mask-size: 100% 100%;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  filter: drop-shadow(0 0 0.6px var(--border-color));
 }
 
 /* "Made" project grid */
@@ -313,17 +320,29 @@ img.app-icon {
 }
 
 .made-card img {
+  display: block;
   max-width: 100%;
   width: 100%;
+  height: auto;
   aspect-ratio: 1 / 1;
   object-fit: cover;
-  border-radius: 1.25rem;
-  border: 1px solid var(--border-color);
-  transition: transform 0.15s ease;
+  object-position: center;
+  border: none;
+  border-radius: 0;
+  -webkit-mask-image: url("/assets/squircle-mask.svg");
+  mask-image: url("/assets/squircle-mask.svg");
+  -webkit-mask-size: 100% 100%;
+  mask-size: 100% 100%;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  /* hairline that follows the squircle (box border can't) */
+  filter: drop-shadow(0 0 0.6px var(--border-color));
+  transition: transform 0.15s ease, filter 0.15s ease;
 }
 
 .made-card:hover img {
   transform: translateY(-2px);
+  filter: drop-shadow(0 0 0.6px var(--border-color)) drop-shadow(0 4px 10px color-mix(in srgb, var(--heading-color) 18%, transparent));
 }
 
 .made-card-title {
@@ -342,5 +361,52 @@ img.app-icon {
 @media (max-width: 640px) {
   .made-grid {
     grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  }
+}
+
+/* Lightbox */
+img.lightbox-target {
+  cursor: zoom-in;
+}
+
+img.lightbox-source {
+  visibility: hidden;
+}
+
+body.lightbox-open {
+  overflow: hidden;
+}
+
+.lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  background: color-mix(in srgb, var(--background-color) 35%, transparent);
+  -webkit-backdrop-filter: blur(0px);
+  backdrop-filter: blur(0px);
+  opacity: 0;
+  transition:
+    opacity 0.32s cubic-bezier(0.2, 0.8, 0.2, 1),
+    backdrop-filter 0.32s cubic-bezier(0.2, 0.8, 0.2, 1),
+    -webkit-backdrop-filter 0.32s cubic-bezier(0.2, 0.8, 0.2, 1);
+  cursor: zoom-out;
+}
+
+.lightbox.is-open {
+  opacity: 1;
+  -webkit-backdrop-filter: blur(16px) saturate(1.2);
+  backdrop-filter: blur(16px) saturate(1.2);
+}
+
+.lightbox-image {
+  display: block;
+  box-shadow: 0 24px 64px color-mix(in srgb, #000 35%, transparent);
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .lightbox {
+    transition: opacity 0.01ms linear;
   }
 }

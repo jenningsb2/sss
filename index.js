@@ -9,6 +9,7 @@ const pagesDir = path.join(__dirname, 'pages');
 const outputDir = path.join(__dirname, 'dist');
 const assetsDir = path.join(__dirname, 'assets');
 const stylesFile = path.join(__dirname, 'styles.css');
+const lightboxFile = path.join(__dirname, 'lightbox.js');
 
 // Configure marked with extensions
 marked.use({ extensions: [definitionList] });
@@ -24,6 +25,7 @@ fs.ensureDirSync(outputDir);
 function copyAssets() {
   fs.copySync(assetsDir, path.join(outputDir, 'assets'));
   fs.copyFileSync(stylesFile, path.join(outputDir, 'styles.css'));
+  fs.copyFileSync(lightboxFile, path.join(outputDir, 'lightbox.js'));
 }
 
 function processMarkdownFile(filePath) {
@@ -74,6 +76,7 @@ function processMarkdownFile(filePath) {
     </head>
     <body>
         ${htmlContent}
+        <script src="/lightbox.js" defer></script>
     </body>
     </html>
   `;
@@ -108,66 +111,36 @@ function compile() {
   console.log('Compilation complete.');
 }
 
-// Initial compilation
-compile();
-
-// Watch for changes
-const watcher = chokidar.watch([
-  path.join(pagesDir, '**', '*.md'),
-  stylesFile
-], {
-  persistent: true,
-  ignoreInitial: true
-});
-
-watcher
-  .on('add', path => {
-    console.log(`File ${path} has been added`);
-    compile();
-  })
-  .on('change', path => {
-    console.log(`File ${path} has been changed`);
-    compile();
-  })
-  .on('unlink', path => {
-    console.log(`File ${path} has been removed`);
-    compile();
-  });
-
-console.log('Watching for changes...');
-
-// At the bottom of index.js
 const isOnce = process.argv.includes('--once');
 
-// Initial compilation
 compile();
 
 if (!isOnce) {
-  // Watch for changes only if not in once mode
   const watcher = chokidar.watch([
     path.join(pagesDir, '**', '*.md'),
-    stylesFile
+    stylesFile,
+    lightboxFile
   ], {
     persistent: true,
     ignoreInitial: true
   });
 
   watcher
-    .on('add', path => {
-      console.log(`File ${path} has been added`);
+    .on('add', filePath => {
+      console.log(`File ${filePath} has been added`);
       compile();
     })
-    .on('change', path => {
-      console.log(`File ${path} has been changed`);
+    .on('change', filePath => {
+      console.log(`File ${filePath} has been changed`);
       compile();
     })
-    .on('unlink', path => {
-      console.log(`File ${path} has been removed`);
+    .on('unlink', filePath => {
+      console.log(`File ${filePath} has been removed`);
       compile();
     });
 
   console.log('Watching for changes...');
 } else {
   console.log('Build complete. Exiting...');
-  process.exit(0); // Add this line to explicitly exit
+  process.exit(0);
 }
