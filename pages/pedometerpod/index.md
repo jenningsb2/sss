@@ -6,6 +6,8 @@
 
 <img src="/assets/pedometerpod/pedometerpod-icon-light.png" alt="The PedometerPod app icon" class="app-icon">
 
+<img src="/assets/pedometerpod/pedometerpod-mac.png" alt="PedometerPod macOS menu bar app" class="screenshot-hero">
+
 <div class="screenshots">
   <img src="/assets/pedometerpod/pedometerpod-dashboard.png" alt="PedometerPod dashboard showing daily goal progress and weekly steps">
   <img src="/assets/pedometerpod/pedometerpod-history.png" alt="PedometerPod history of walking sessions synced to Health">

@@ -11,8 +11,8 @@
     if (!(img instanceof HTMLImageElement)) return false;
     if (!img.src) return false;
     if (img.closest(".lightbox")) return false;
-    // Only project/page screenshot rows
-    return Boolean(img.closest(".screenshots"));
+    // Screenshots in the grid or full-width hero shots
+    return Boolean(img.closest(".screenshots") || img.classList.contains("screenshot-hero"));
   }
 
   function open(img) {
