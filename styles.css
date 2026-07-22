@@ -444,26 +444,79 @@ img.app-icon {
   filter: drop-shadow(0 0 0.6px var(--border-color));
 }
 
-/* TestFlight beta button */
+/* TestFlight beta button with a liquid-metal ring */
+@property --metal-angle {
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
+}
+
 a.testflight-button {
+  position: relative;
+  isolation: isolate;
   display: inline-flex;
   align-items: center;
   gap: 0.6rem;
   margin: 0 0 1.5rem;
   padding: 0.55rem 1.1rem 0.55rem 0.65rem;
-  border: 1px solid var(--border-color);
+  border: none;
   border-radius: 999px;
   background-color: var(--background-color);
   color: var(--text-color);
   font-weight: 600;
   text-decoration: none;
-  transition: border-color 0.15s ease, transform 0.15s ease;
+  transition: transform 0.15s ease;
+}
+
+/* the rotating metallic ring: a conic gradient masked to the border only */
+a.testflight-button::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  border-radius: inherit;
+  padding: 1.5px;
+  background: conic-gradient(
+    from var(--metal-angle),
+    #20242c, #aab6c9, #363c48, #7c8798,
+    #16181d, #97a2b3, #2a2f38, #20242c
+  );
+  -webkit-mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+  mask-composite: exclude;
+  animation: metal-spin 4s linear infinite;
+}
+
+@keyframes metal-spin {
+  to { --metal-angle: 360deg; }
 }
 
 a.testflight-button:hover {
   color: var(--text-color);
-  border-color: color-mix(in srgb, var(--link-color) 60%, var(--border-color));
   transform: translateY(-1px);
+}
+
+a.testflight-button:hover::before {
+  animation-duration: 1.6s;
+  filter: brightness(1.15);
+}
+
+/* fallback: no @property support means the angle can't animate, so keep a
+   static metallic ring rather than a frozen slice */
+@supports not (background: conic-gradient(from var(--metal-angle), red, blue)) {
+  a.testflight-button::before { animation: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  a.testflight-button::before,
+  a.testflight-button:hover::before {
+    animation: none;
+  }
 }
 
 img.testflight-logo {
