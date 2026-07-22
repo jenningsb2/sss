@@ -4,7 +4,10 @@
 
 > A SwiftUI workout timer for the Murph Hero WOD, built for iPhone and Apple&nbsp;Watch.
 
-*Coming soon to the App Store.*
+<a href="https://apps.apple.com/us/app/murphy-murph-challenge-timer/id6771931930" class="appstore-button">
+  <img src="/assets/murphy/appstore-logo.webp" alt="" class="appstore-logo" aria-hidden="true">
+  <span>Download on the App Store</span>
+</a>
 
 <div class="screenshots">
   <img src="/assets/murphy/murphy-appstore1.webp" alt="Murphy screenshot">

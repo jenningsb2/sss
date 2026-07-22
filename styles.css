@@ -444,14 +444,15 @@ img.app-icon {
   filter: drop-shadow(0 0 0.6px var(--border-color));
 }
 
-/* TestFlight beta button with a liquid-metal ring */
+/* App buttons with a liquid-metal ring (TestFlight + App Store) */
 @property --metal-angle {
   syntax: "<angle>";
   initial-value: 0deg;
   inherits: false;
 }
 
-a.testflight-button {
+a.testflight-button,
+a.appstore-button {
   position: relative;
   isolation: isolate;
   display: inline-flex;
@@ -469,7 +470,8 @@ a.testflight-button {
 }
 
 /* the rotating metallic ring: a conic gradient masked to the border only */
-a.testflight-button::before {
+a.testflight-button::before,
+a.appstore-button::before {
   content: "";
   position: absolute;
   inset: 0;
@@ -496,12 +498,14 @@ a.testflight-button::before {
   to { --metal-angle: 360deg; }
 }
 
-a.testflight-button:hover {
+a.testflight-button:hover,
+a.appstore-button:hover {
   color: var(--text-color);
   transform: translateY(-1px);
 }
 
-a.testflight-button:hover::before {
+a.testflight-button:hover::before,
+a.appstore-button:hover::before {
   animation-duration: 1.6s;
   filter: brightness(1.15);
 }
@@ -509,17 +513,28 @@ a.testflight-button:hover::before {
 /* fallback: no @property support means the angle can't animate, so keep a
    static metallic ring rather than a frozen slice */
 @supports not (background: conic-gradient(from var(--metal-angle), red, blue)) {
-  a.testflight-button::before { animation: none; }
+  a.testflight-button::before,
+  a.appstore-button::before { animation: none; }
 }
 
 @media (prefers-reduced-motion: reduce) {
   a.testflight-button::before,
-  a.testflight-button:hover::before {
+  a.testflight-button:hover::before,
+  a.appstore-button::before,
+  a.appstore-button:hover::before {
     animation: none;
   }
 }
 
 img.testflight-logo {
+  width: 28px;
+  height: 28px;
+  margin: 0;
+  border: none;
+  border-radius: 6px;
+}
+
+img.appstore-logo {
   width: 28px;
   height: 28px;
   margin: 0;
