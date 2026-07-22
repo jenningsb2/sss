@@ -444,6 +444,36 @@ img.app-icon {
   filter: drop-shadow(0 0 0.6px var(--border-color));
 }
 
+/* TestFlight beta button */
+a.testflight-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin: 0 0 1.5rem;
+  padding: 0.55rem 1.1rem 0.55rem 0.65rem;
+  border: 1px solid var(--border-color);
+  border-radius: 999px;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  font-weight: 600;
+  text-decoration: none;
+  transition: border-color 0.15s ease, transform 0.15s ease;
+}
+
+a.testflight-button:hover {
+  color: var(--text-color);
+  border-color: color-mix(in srgb, var(--link-color) 60%, var(--border-color));
+  transform: translateY(-1px);
+}
+
+img.testflight-logo {
+  width: 28px;
+  height: 28px;
+  margin: 0;
+  border: none;
+  border-radius: 6px;
+}
+
 /* "Made" project grid */
 .made-grid {
   display: grid;

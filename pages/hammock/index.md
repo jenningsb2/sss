@@ -6,6 +6,63 @@
 
 <img src="/assets/hammock/hammock-iOS-Default-1024x1024@1x.webp" alt="The Hammock app icon" class="app-icon">
 
+<a href="https://testflight.apple.com/join/uFuJaV6T" class="testflight-button">
+  <img src="/assets/hammock/testflight-logo.webp" alt="" class="testflight-logo" aria-hidden="true">
+  <span>Test on TestFlight</span>
+</a>
+
+<div class="screenshots">
+  <div class="device device-phone">
+    <div class="device-bezel">
+      <div class="device-screen">
+        <img src="/assets/hammock/hammock-notes.webp" alt="The Hammock note list with a recording in progress">
+      </div>
+    </div>
+  </div>
+  <div class="device device-phone">
+    <div class="device-bezel">
+      <div class="device-screen">
+        <img src="/assets/hammock/hammock-recording.webp" alt="Hammock recording a voice note with a live waveform and timer">
+      </div>
+    </div>
+  </div>
+  <div class="device device-phone">
+    <div class="device-bezel">
+      <div class="device-screen">
+        <img src="/assets/hammock/hammock-transcript.webp" alt="The raw transcript of a recording in Hammock">
+      </div>
+    </div>
+  </div>
+  <div class="device device-phone">
+    <div class="device-bezel">
+      <div class="device-screen">
+        <img src="/assets/hammock/hammock-note.webp" alt="A recording rewritten into a clean, titled note">
+      </div>
+    </div>
+  </div>
+  <div class="device device-phone">
+    <div class="device-bezel">
+      <div class="device-screen">
+        <img src="/assets/hammock/hammock-styles.webp" alt="Hammock note styles: Concise Summary, Clean Note, Just Transcribe, and custom styles">
+      </div>
+    </div>
+  </div>
+  <div class="device device-phone">
+    <div class="device-bezel">
+      <div class="device-screen">
+        <img src="/assets/hammock/hammock-settings.webp" alt="Hammock settings for choosing transcription and rewrite providers with your own keys">
+      </div>
+    </div>
+  </div>
+  <div class="device device-phone">
+    <div class="device-bezel">
+      <div class="device-screen">
+        <img src="/assets/hammock/hammock-lockscreen.webp" alt="A Live Activity showing a Hammock recording on the Lock Screen">
+      </div>
+    </div>
+  </div>
+</div>
+
 ## Why I built it
 
 My best ideas almost never show up at a keyboard. They show up on a walk, or in the shower, or somewhere away from the screen. By the time I'm back at the computer, the sharp version is usually&nbsp;gone.
